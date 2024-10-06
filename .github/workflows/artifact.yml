@@ -11,13 +11,13 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Create a text file
-      run: echo "Hello, world!" > hello.txt
+      run: echo "Hello, world!" > ./artifacts/hello.txt
 
     - name: Archive text file
       uses: actions/upload-artifact@v4
       with:
         name: hello-artifact
-        path: hello.txt
+        path: ./artifacts/hello.txt
 
   download:
     needs: build
